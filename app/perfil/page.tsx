@@ -6,7 +6,6 @@ import { Button } from "@/components/ui/button"
 import { Trophy, Medal, Award, MapPin, Keyboard, Edit, ArrowLeft } from "lucide-react"
 import UserBadges from "@/components/user-badges"
 import Link from "next/link"
-import Image from "next/image"
 import { useEffect, useState } from "react"
 import { useRouter } from "next/navigation"
 import { useToast } from "@/components/ui/use-toast"
@@ -89,15 +88,6 @@ export default function ProfilePage() {
             </Button>
           </Link>
           <h1 className="text-3xl font-bold">Meu Perfil</h1>
-        </div>
-        <div className="hidden md:block">
-          <Image
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/nerdrats-bZXIsl29NnVDcaRTJtkOsFdFjF7JeE.png"
-            alt="NERDRATS Logo"
-            width={120}
-            height={40}
-            className="h-auto"
-          />
         </div>
       </div>
 
@@ -218,7 +208,12 @@ export default function ProfilePage() {
 
         {/* Seção de Badges */}
         <div className="md:col-span-3">
-          <UserBadges userDistance={user.distance.current} showAll={true} />
+          <UserBadges
+            userDistance={user.distance.current}
+            userKeydowns={user.keydowns.total}
+            showAll={true}
+            type="all"
+          />
         </div>
       </div>
     </div>

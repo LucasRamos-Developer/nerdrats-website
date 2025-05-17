@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import { Medal, Trophy, Award, MapPin } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
@@ -72,36 +72,32 @@ const generalRankerQuotes = [
 ]
 
 export default function DistanceRankingCard({ player, index }: { player: DistancePlayer; index: number }) {
-  const [randomQuote, setRandomQuote] = useState(() => {
-    // Selecionar uma frase aleatória com base na posição
-    let quotePool: string[] = []
+  // Selecionar uma frase aleatória com base na posição
+  let quotePool: string[] = []
 
-    if (index === 0) {
-      quotePool = topRankerQuotes
-    } else if (index === 1 || index === 2) {
-      quotePool = runnerUpQuotes
-    } else if (index >= 3 && index <= 9) {
-      quotePool = midRankerQuotes
-    } else {
-      quotePool = lowerRankerQuotes
-    }
+  if (index === 0) {
+    quotePool = topRankerQuotes
+  } else if (index === 1 || index === 2) {
+    quotePool = runnerUpQuotes
+  } else if (index >= 3 && index <= 9) {
+    quotePool = midRankerQuotes
+  } else {
+    quotePool = lowerRankerQuotes
+  }
 
-    // Adicionar frases gerais ao pool para aumentar a variedade
-    quotePool = [...quotePool, ...generalRankerQuotes]
+  // Adicionar frases gerais ao pool para aumentar a variedade
+  quotePool = [...quotePool, ...generalRankerQuotes]
 
-    // Selecionar uma frase aleatória do pool
-    const randomIndex = Math.floor(Math.random() * quotePool.length)
-    return quotePool[randomIndex] || ""
-  })
+  // Selecionar uma frase aleatória do pool
+  const randomIndex = Math.floor(Math.random() * quotePool.length)
+  const initialQuote = quotePool[randomIndex] || ""
+
+  const [randomQuote] = useState(initialQuote)
 
   // Verificar se player existe antes de continuar
   if (!player) {
     return <div>Dados do jogador não disponíveis</div>
   }
-
-  useEffect(() => {
-    // The quote is already initialized, so no need to update it on index change
-  }, [index])
 
   // Extrair as iniciais do nome para o fallback do avatar
   const initials = player.name ? player.name.substring(0, 2).toUpperCase() : "??"
@@ -141,9 +137,9 @@ export default function DistanceRankingCard({ player, index }: { player: Distanc
               </div>
             </div>
 
-            {/* Adicionando os badges do usuário */}
+            {/* Adicionando apenas o último badge do usuário */}
             <div className="mt-1">
-              <UserBadges userDistance={player.distance} />
+              <UserBadges userDistance={player.distance} showOnlyLast={true} />
             </div>
           </div>
 
