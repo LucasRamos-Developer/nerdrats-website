@@ -1,0 +1,200 @@
+[
+  {
+    "name": "Campo de Futebol",
+    "distance": 0.5,
+    "badge": "⚽️",
+    "description": "Aproximadamente o comprimento de 5 campos de futebol.",
+    "kcal": 30,
+    "item": "Biscoito",
+    "funFact": "Você percorreu virtualmente o equivalente a 500 bananas enfileiradas! 🍌",
+    "motivation": "O primeiro passo é sempre o mais importante. Continue assim!",
+    "nerdTaunt": "Com essa distância, você poderia ter dado uma volta no campo de futebol, mas preferiu debugar aquela função recursiva pela quinta vez hoje! ⚽"
+  },
+  {
+    "name": "Empire State Building",
+    "distance": 1.0,
+    "badge": "🏙️",
+    "description": "Distância equivalente a 2.5 vezes a altura do Empire State Building.",
+    "kcal": 60,
+    "item": "Copo de Suco",
+    "funFact": "Seu mouse percorreu o equivalente a 1.000 teclados mecânicos enfileirados! ⌨️",
+    "motivation": "Você está subindo como um arranha-céu de código bem estruturado!",
+    "nerdTaunt": "Enquanto você movia o cursor essa distância, seu código poderia ter compilado... se não tivesse 42 erros de sintaxe! 🏙️"
+  },
+  {
+    "name": "Golden Gate Bridge",
+    "distance": 1.5,
+    "badge": "🌉",
+    "description": "Comprimento total da Ponte Golden Gate em San Francisco.",
+    "kcal": 90,
+    "item": "Pão com Manteiga",
+    "funFact": "Seu cursor viajou o equivalente a 375 smartphones enfileirados! 📱",
+    "motivation": "Você está construindo pontes entre problemas e soluções!",
+    "nerdTaunt": "Você poderia ter atravessado a Golden Gate, mas preferiu ficar preso em um loop infinito tentando centralizar uma div! 🌉"
+  },
+  {
+    "name": "Central Park",
+    "distance": 2.5,
+    "badge": "🌳",
+    "description": "Comprimento aproximado do Central Park em Nova York.",
+    "kcal": 150,
+    "item": "Chocolate Pequeno",
+    "funFact": "Seu mouse percorreu o equivalente a 625 mouses gaming enfileirados! 🖱️",
+    "motivation": "Como um parque no meio da cidade, seu código é um oásis de clareza!",
+    "nerdTaunt": "Você poderia ter dado um passeio pelo Central Park, mas escolheu passar esse tempo procurando por aquele ponto e vírgula perdido! 🌳"
+  },
+  {
+    "name": "Hollywood Walk of Fame",
+    "distance": 3.5,
+    "badge": "⭐️",
+    "description": "Extensão da Calçada da Fama de Hollywood.",
+    "kcal": 210,
+    "item": "Coxinha",
+    "funFact": "Seu cursor percorreu o equivalente a 875 controles de videogame enfileirados! 🎮",
+    "motivation": "Você está caminhando para o estrelato da programação!",
+    "nerdTaunt": "Você poderia estar vendo as estrelas em Hollywood, mas está aqui admirando as estrelas no GitHub do seu projeto favorito! ⭐️"
+  },
+  {
+    "name": "Muro de Berlim",
+    "distance": 4.3,
+    "badge": "🧱",
+    "description": "Comprimento do Muro de Berlim antes da queda.",
+    "kcal": 250,
+    "item": "Fatia de Pizza",
+    "funFact": "Seu mouse viajou o equivalente a 1.075 fones de ouvido enfileirados! 🎧",
+    "motivation": "Como o Muro de Berlim, você está derrubando barreiras na programação!",
+    "nerdTaunt": "Você poderia ter percorrido o Muro de Berlim, mas preferiu construir firewalls para proteger seu código de invasores inexistentes! 🧱"
+  },
+  {
+    "name": "Avenida Paulista",
+    "distance": 5.8,
+    "badge": "🏢",
+    "description": "Comprimento da Avenida Paulista em São Paulo.",
+    "kcal": 300,
+    "item": "Hambúrguer Simples",
+    "funFact": "Seu cursor percorreu o equivalente a 1.450 canecas de café enfileiradas! ☕",
+    "motivation": "Como a Paulista, você é um centro de inovação e progresso!",
+    "nerdTaunt": "Você poderia estar passeando pela Avenida Paulista, mas está aqui tentando entender por que seu código funciona em desenvolvimento mas não em produção! 🏢"
+  },
+  {
+    "name": "Golden Gate Park",
+    "distance": 8.0,
+    "badge": "🌳",
+    "description": "Extensão do Golden Gate Park em San Francisco.",
+    "kcal": 400,
+    "item": "Combo de Fast Food",
+    "funFact": "Seu mouse percorreu o equivalente a 2.000 monitores ultrawide enfileirados! 🖥️",
+    "motivation": "Você está criando seu próprio parque de soluções elegantes!",
+    "nerdTaunt": "Você poderia ter explorado todo o Golden Gate Park, mas passou esse tempo tentando decidir entre tabs ou espaços para indentação! 🌳"
+  },
+  {
+    "name": "Maratona",
+    "distance": 42.2,
+    "badge": "🏅",
+    "description": "A distância oficial de uma maratona olímpica.",
+    "kcal": 3000,
+    "item": "Refeição Completa",
+    "funFact": "Seu cursor percorreu o equivalente a 10.550 cartões de memória enfileirados! 💾",
+    "motivation": "Você é um verdadeiro maratonista do código!",
+    "nerdTaunt": "Você poderia ter corrido uma maratona inteira, mas preferiu passar esse tempo em uma maratona de debugging tentando encontrar por que seu código retorna 'undefined'! 🏅"
+  },
+  {
+    "name": "Everest Base Camp Trek",
+    "distance": 65.0,
+    "badge": "🏔️",
+    "description": "Distância percorrida na trilha até o Campo Base do Everest.",
+    "kcal": 4500,
+    "item": "Pizza Família",
+    "funFact": "Seu mouse percorreu o equivalente a 16.250 placas-mãe enfileiradas! 🖥️",
+    "motivation": "Você está escalando as alturas da excelência técnica!",
+    "nerdTaunt": "Você poderia ter chegado ao Campo Base do Everest, mas passou esse tempo tentando otimizar uma função que roda apenas uma vez na inicialização! 🏔️"
+  },
+  {
+    "name": "Circunferência de Paris",
+    "distance": 110.0,
+    "badge": "🗼",
+    "description": "Circunferência aproximada da cidade de Paris.",
+    "kcal": 7500,
+    "item": "Jantar em Família",
+    "funFact": "Seu cursor percorreu o equivalente a 27.500 pen drives enfileirados! 💽",
+    "motivation": "Como Paris, seu código é uma obra de arte!",
+    "nerdTaunt": "Você poderia ter dado uma volta completa em Paris, mas passou esse tempo tentando entender a documentação de uma API que mudou três vezes desde que você começou a ler! 🗼"
+  },
+  {
+    "name": "Diametro de Manhattan",
+    "distance": 160.0,
+    "badge": "🏢",
+    "description": "Comprimento da ilha de Manhattan.",
+    "kcal": 11000,
+    "item": "Buffet Completo",
+    "funFact": "Seu mouse percorreu o equivalente a 40.000 cartões de crédito enfileirados! 💳",
+    "motivation": "Como Manhattan, você está cheio de possibilidades e inovação!",
+    "nerdTaunt": "Você poderia ter atravessado Manhattan de ponta a ponta, mas passou esse tempo tentando fazer seu CSS responsivo funcionar em todos os navegadores! 🏢"
+  },
+  {
+    "name": "Viagem de São Paulo ao Rio",
+    "distance": 430.0,
+    "badge": "🚗",
+    "description": "Distância média de São Paulo ao Rio de Janeiro.",
+    "kcal": 30000,
+    "item": "Banquete",
+    "funFact": "Seu cursor percorreu o equivalente a 107.500 post-its enfileirados! 📝",
+    "motivation": "Você está cruzando fronteiras na sua jornada de desenvolvimento!",
+    "nerdTaunt": "Você poderia ter viajado de São Paulo ao Rio, mas passou esse tempo tentando migrar seu projeto para a nova versão do framework que saiu ontem! 🚗"
+  },
+  {
+    "name": "Diâmetro da Terra",
+    "distance": 12742.0,
+    "badge": "🌍",
+    "description": "Diâmetro médio da Terra.",
+    "kcal": 900000,
+    "item": "Carrinho de Sorvete",
+    "funFact": "Seu mouse percorreu o equivalente a 3.185.500 chips de computador enfileirados! 🔧",
+    "motivation": "Seu impacto na programação é global!",
+    "nerdTaunt": "Você poderia ter atravessado a Terra de um lado ao outro, mas passou esse tempo tentando explicar para seu chefe por que precisa de mais duas semanas para entregar o projeto! 🌍"
+  },
+  {
+    "name": "Distância até a Lua",
+    "distance": 384400.0,
+    "badge": "🌕",
+    "description": "Distância média da Terra até a Lua.",
+    "kcal": 27000000,
+    "item": "Buffet de Casamento",
+    "funFact": "Seu cursor percorreu o equivalente a 96.100.000 teclas de teclado enfileiradas! ⌨️",
+    "motivation": "Você está alcançando alturas lunares com suas habilidades!",
+    "nerdTaunt": "Você poderia ter ido até a Lua, mas passou esse tempo tentando convencer seu time a adotar TypeScript em vez de JavaScript! 🌕"
+  },
+  {
+    "name": "Distância até Marte",
+    "distance": 225000000.0,
+    "badge": "🚀",
+    "description": "Distância média da Terra até Marte.",
+    "kcal": 1.58e10,
+    "item": "Banquete Real",
+    "funFact": "Seu mouse percorreu o equivalente a 56.250.000.000 pixels de tela enfileirados! 🖥️",
+    "motivation": "Como um explorador marciano, você está desbravando novos territórios na programação!",
+    "nerdTaunt": "Você poderia ter viajado até Marte, mas passou esse tempo tentando fazer seu código funcionar em um navegador de 2005 porque um cliente importante ainda o utiliza! 🚀"
+  },
+  {
+    "name": "Distância até o Sol",
+    "distance": 149600000.0,
+    "badge": "☀️",
+    "description": "Distância média da Terra até o Sol.",
+    "kcal": 1.05e10,
+    "item": "Buffet Presidencial",
+    "funFact": "Seu cursor percorreu o equivalente a 37.400.000.000 cabos USB enfileirados! 🔌",
+    "motivation": "Você brilha como o Sol no universo da programação!",
+    "nerdTaunt": "Você poderia ter viajado até o Sol, mas passou esse tempo tentando reduzir o tamanho do seu bundle JavaScript em 5KB! ☀️"
+  },
+  {
+    "name": "Distância até Alfa Centauri",
+    "distance": 4.13e13,
+    "badge": "✨",
+    "description": "Distância da Terra até a estrela mais próxima, Alfa Centauri.",
+    "kcal": 4.13e17,
+    "item": "Reserva Alimentar Global",
+    "funFact": "Seu mouse percorreu o equivalente a 1.03e+16 grãos de areia enfileirados! 🏝️",
+    "motivation": "Você está alcançando as estrelas com seu talento em programação!",
+    "nerdTaunt": "Você poderia ter viajado até Alfa Centauri, mas passou esse tempo tentando encontrar a solução perfeita para um problema que ninguém mais se importa! ✨"
+  }
+]

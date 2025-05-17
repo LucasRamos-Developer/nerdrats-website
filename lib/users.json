@@ -1,0 +1,128 @@
+[
+  {
+    "id": "1",
+    "email": "carlos@nerdrats.com",
+    "name": "Carlos Silva",
+    "initials": "CS",
+    "avatar": "/placeholder.svg?height=96&width=96&text=CS",
+    "memberSince": "Maio 2023",
+    "lastActivity": "Hoje",
+    "distance": {
+      "current": 42.5,
+      "position": 1,
+      "bestPosition": 1,
+      "change": "up"
+    },
+    "keydowns": {
+      "total": 15420,
+      "position": 2,
+      "wpm": 120,
+      "change": "same"
+    }
+  },
+  {
+    "id": "2",
+    "email": "ana@nerdrats.com",
+    "name": "Ana Oliveira",
+    "initials": "AO",
+    "avatar": "/placeholder.svg?height=96&width=96&text=AO",
+    "memberSince": "Janeiro 2023",
+    "lastActivity": "Ontem",
+    "distance": {
+      "current": 38.7,
+      "position": 2,
+      "bestPosition": 1,
+      "change": "down"
+    },
+    "keydowns": {
+      "total": 18350,
+      "position": 1,
+      "wpm": 135,
+      "change": "up"
+    }
+  },
+  {
+    "id": "3",
+    "email": "pedro@nerdrats.com",
+    "name": "Pedro Santos",
+    "initials": "PS",
+    "avatar": "/placeholder.svg?height=96&width=96&text=PS",
+    "memberSince": "Março 2023",
+    "lastActivity": "Há 2 dias",
+    "distance": {
+      "current": 35.2,
+      "position": 3,
+      "bestPosition": 2,
+      "change": "up"
+    },
+    "keydowns": {
+      "total": 12800,
+      "position": 3,
+      "wpm": 105,
+      "change": "down"
+    }
+  },
+  {
+    "id": "4",
+    "email": "mariana@nerdrats.com",
+    "name": "Mariana Costa",
+    "initials": "MC",
+    "avatar": "/placeholder.svg?height=96&width=96&text=MC",
+    "memberSince": "Abril 2023",
+    "lastActivity": "Hoje",
+    "distance": {
+      "current": 33.8,
+      "position": 4,
+      "bestPosition": 2,
+      "change": "same"
+    },
+    "keydowns": {
+      "total": 10350,
+      "position": 5,
+      "wpm": 95,
+      "change": "down"
+    }
+  },
+  {
+    "id": "5",
+    "email": "joao@nerdrats.com",
+    "name": "João Pereira",
+    "initials": "JP",
+    "avatar": "/placeholder.svg?height=96&width=96&text=JP",
+    "memberSince": "Fevereiro 2023",
+    "lastActivity": "Hoje",
+    "distance": {
+      "current": 31.5,
+      "position": 5,
+      "bestPosition": 3,
+      "change": "up"
+    },
+    "keydowns": {
+      "total": 11200,
+      "position": 4,
+      "wpm": 98,
+      "change": "up"
+    }
+  },
+  {
+    "id": "6",
+    "email": "usuario@exemplo.com",
+    "name": "Usuário",
+    "initials": "US",
+    "avatar": "/placeholder.svg?height=96&width=96&text=US",
+    "memberSince": "Maio 2023",
+    "lastActivity": "Hoje",
+    "distance": {
+      "current": 33.8,
+      "position": 4,
+      "bestPosition": 2,
+      "change": "same"
+    },
+    "keydowns": {
+      "total": 10350,
+      "position": 3,
+      "wpm": 105,
+      "change": "same"
+    }
+  }
+]
