@@ -4,16 +4,6 @@ import Image from "next/image"
 export default function Home() {
   return (
     <div className="container mx-auto px-4 py-10 flex flex-col items-center">
-      <div className="mb-6">
-        <Image
-          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/nerdrats-bZXIsl29NnVDcaRTJtkOsFdFjF7JeE.png"
-          alt="NERDRATS Logo"
-          width={240}
-          height={80}
-          className="h-auto"
-          priority
-        />
-      </div>
 
       <h1 className="text-3xl font-bold mb-2 text-center">Ranking de Líderes</h1>
 

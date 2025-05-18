@@ -1,10 +1,11 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import { Medal, Trophy, Award, Keyboard } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Badge } from "@/components/ui/badge"
+import UserBadges from "@/components/user-badges"
 
 type KeydownPlayer = {
   id: number
@@ -71,36 +72,32 @@ const generalTyperQuotes = [
 ]
 
 export default function KeydownRankingCard({ player, index }: { player: KeydownPlayer; index: number }) {
-  const [randomQuote, setRandomQuote] = useState(() => {
-    // Selecionar uma frase aleatória com base na posição
-    let quotePool: string[]
+  // Selecionar uma frase aleatória com base na posição
+  let quotePool: string[] = []
 
-    if (index === 0) {
-      quotePool = topTyperQuotes
-    } else if (index === 1 || index === 2) {
-      quotePool = runnerUpTyperQuotes
-    } else if (index >= 3 && index <= 9) {
-      quotePool = midTyperQuotes
-    } else {
-      quotePool = lowerTyperQuotes
-    }
+  if (index === 0) {
+    quotePool = topTyperQuotes
+  } else if (index === 1 || index === 2) {
+    quotePool = runnerUpTyperQuotes
+  } else if (index >= 3 && index <= 9) {
+    quotePool = midTyperQuotes
+  } else {
+    quotePool = lowerTyperQuotes
+  }
 
-    // Adicionar frases gerais ao pool para aumentar a variedade
-    quotePool = [...quotePool, ...generalTyperQuotes]
+  // Adicionar frases gerais ao pool para aumentar a variedade
+  quotePool = [...quotePool, ...generalTyperQuotes]
 
-    // Selecionar uma frase aleatória do pool
-    const randomIndex = Math.floor(Math.random() * quotePool.length)
-    return quotePool[randomIndex]
-  })
+  // Selecionar uma frase aleatória do pool
+  const randomIndex = Math.floor(Math.random() * quotePool.length)
+  const initialQuote = quotePool[randomIndex] || ""
+
+  const [randomQuote] = useState(initialQuote)
 
   // Verificar se player existe antes de continuar
   if (!player) {
     return <div>Dados do jogador não disponíveis</div>
   }
-
-  useEffect(() => {
-    // Não é necessário o useEffect pois o estado é inicializado com uma função
-  }, [index])
 
   // Extrair as iniciais do nome para o fallback do avatar
   const initials = player.name ? player.name.substring(0, 2).toUpperCase() : "??"
@@ -140,6 +137,11 @@ export default function KeydownRankingCard({ player, index }: { player: KeydownP
                   <span className="font-semibold">{player.wpm}</span> WPM
                 </span>
               </div>
+            </div>
+
+            {/* Adicionando apenas o último badge do usuário */}
+            <div className="mt-1">
+              <UserBadges userKeydowns={player.keydowns} showOnlyLast={true} type="keydowns" />
             </div>
           </div>
 

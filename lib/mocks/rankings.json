@@ -1,0 +1,86 @@
+{
+    "distance": [
+        {
+            "id": "1",
+            "username": "Carlos Silva",
+            "initials": "CS",
+            "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=CS&backgroundColor=4f46e5",
+            "distance": 42.5,
+            "unit": "km"
+        },
+        {
+            "id": "2",
+            "username": "Ana Oliveira",
+            "initials": "AO",
+            "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=AO&backgroundColor=4f46e5",
+            "distance": 38.7,
+            "unit": "km"
+        },
+        {
+            "id": "3",
+            "username": "Pedro Santos",
+            "initials": "PS",
+            "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=PS&backgroundColor=4f46e5",
+            "distance": 35.2,
+            "unit": "km"
+        },
+        {
+            "id": "4",
+            "username": "Mariana Costa",
+            "initials": "MC",
+            "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=MC&backgroundColor=4f46e5",
+            "distance": 33.8,
+            "unit": "km"
+        },
+        {
+            "id": "5",
+            "username": "João Pereira",
+            "initials": "JP",
+            "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=JP&backgroundColor=4f46e5",
+            "distance": 31.5,
+            "unit": "km"
+        }
+    ],
+    "keydowns": [
+        {
+            "id": "2",
+            "username": "Ana Oliveira",
+            "initials": "AO",
+            "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=AO&backgroundColor=4f46e5",
+            "keydowns": 18350,
+            "wpm": 135
+        },
+        {
+            "id": "1",
+            "username": "Carlos Silva",
+            "initials": "CS",
+            "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=CS&backgroundColor=4f46e5",
+            "keydowns": 15420,
+            "wpm": 120
+        },
+        {
+            "id": "3",
+            "username": "Pedro Santos",
+            "initials": "PS",
+            "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=PS&backgroundColor=4f46e5",
+            "keydowns": 12800,
+            "wpm": 105
+        },
+        {
+            "id": "5",
+            "username": "João Pereira",
+            "initials": "JP",
+            "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=JP&backgroundColor=4f46e5",
+            "keydowns": 11200,
+            "wpm": 98
+        },
+        {
+            "id": "4",
+            "username": "Mariana Costa",
+            "initials": "MC",
+            "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=MC&backgroundColor=4f46e5",
+            "keydowns": 10350,
+            "wpm": 95
+        }
+    ]
+}

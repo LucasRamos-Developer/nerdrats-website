@@ -6,40 +6,34 @@ import { Route, Keyboard } from "lucide-react"
 import DistanceRankingCard from "./distance-ranking-card"
 import KeydownRankingCard from "./keydown-ranking-card"
 import { fetchRankingData } from "@/lib/api"
+import type { RankingEntry } from "@/lib/types"
 
 export default function RankingTabs() {
-  const [distanceData, setDistanceData] = useState<any[]>([])
-  const [keydownData, setKeydownData] = useState<any[]>([])
+  const [distanceData, setDistanceData] = useState<RankingEntry[]>([])
+  const [keydownData, setKeydownData] = useState<RankingEntry[]>([])
   const [loading, setLoading] = useState(true)
+
+  const getInitials = (name: string | undefined) => {
+    if (!name) return "US"; // US para "User"
+    return name
+      .split(' ')
+      .map(part => part[0])
+      .join('')
+      .toUpperCase()
+      .slice(0, 2)
+  }
 
   useEffect(() => {
     const loadData = async () => {
       setLoading(true)
       try {
-        const distanceResult = await fetchRankingData("distancia")
-        const keydownResult = await fetchRankingData("teclas")
+        const [distanceResult, keydownResult] = await Promise.all([
+          fetchRankingData("distancia"),
+          fetchRankingData("teclas"),
+        ])
 
-        // Transformar os dados para o formato esperado pelos componentes de card
-        const formattedDistanceData = distanceResult.map((user) => ({
-          id: Number.parseInt(user.id),
-          name: user.username,
-          distance: user.distance || 0,
-          unit: "km",
-          avatar: `/placeholder.svg?height=40&width=40&text=${user.initials}`,
-          change: user.status === "subiu" ? "up" : user.status === "desceu" ? "down" : "same",
-        }))
-
-        const formattedKeydownData = keydownResult.map((user) => ({
-          id: Number.parseInt(user.id),
-          name: user.username,
-          keydowns: user.words || 0,
-          wpm: Math.floor((user.words || 0) / 5), // Estimativa simples de WPM
-          avatar: `/placeholder.svg?height=40&width=40&text=${user.initials}`,
-          change: user.status === "subiu" ? "up" : user.status === "desceu" ? "down" : "same",
-        }))
-
-        setDistanceData(formattedDistanceData)
-        setKeydownData(formattedKeydownData)
+        setDistanceData(distanceResult)
+        setKeydownData(keydownResult)
       } catch (error) {
         console.error("Falha ao buscar dados do ranking:", error)
       } finally {
@@ -69,7 +63,18 @@ export default function RankingTabs() {
         ) : (
           <div className="space-y-4">
             {distanceData.map((player, index) => (
-              <DistanceRankingCard key={player.id} player={player} index={index} />
+              <DistanceRankingCard
+                key={player.id}
+                player={{
+                  id: Number(player.id),
+                  name: player.user_github,
+                  distance: player.distance || 0,
+                  unit: "km",
+                  avatar: player.avatar || `/placeholder.svg?height=40&width=40&text=${player.initials || getInitials(player.username)}`,
+                  change: player.status === "subiu" ? "up" : player.status === "desceu" ? "down" : "same",
+                }}
+                index={index}
+              />
             ))}
           </div>
         )}
@@ -81,7 +86,18 @@ export default function RankingTabs() {
         ) : (
           <div className="space-y-4">
             {keydownData.map((player, index) => (
-              <KeydownRankingCard key={player.id} player={player} index={index} />
+              <KeydownRankingCard
+                key={player.id}
+                player={{
+                  id: Number(player.id),
+                  name: player.username,
+                  keydowns: player.words || 0,
+                  wpm: Math.floor((player.words || 0) / 5),
+                  avatar: player.avatar || `/placeholder.svg?height=40&width=40&text=${player.initials || getInitials(player.username)}`,
+                  change: player.status === "subiu" ? "up" : player.status === "desceu" ? "down" : "same",
+                }}
+                index={index}
+              />
             ))}
           </div>
         )}

@@ -1,0 +1,47 @@
+{
+  "topRanker": [
+    "Seus dedos são mais rápidos que a velocidade da luz! Seu médico de RSI agradece!",
+    "Você é o Mozart do teclado! Infelizmente, seu código ainda tem bugs...",
+    "Campeão de digitação! Seu teclado pediu férias remuneradas!",
+    "Tão perto do topo! Seu teclado está torcendo por você (e por uma limpeza)!",
+    "Posição honrosa! Seu ortopedista também está orgulhoso do seu negócio!",
+    "Você é quase o mais rápido! Seu corretor ortográfico não consegue acompanhar!",
+    "Medalha de ouro em digitação! Também merece ouro em consumo de café!"
+  ],
+  "runnerUp": [
+    "Quase lá! Mais alguns energy drinks e você chega ao primeiro lugar!",
+    "Prata/Bronze na digitação! Ouro em ignorar os sinais de tendinite!",
+    "Seus dedos estão quase pegando fogo! Seu extintor está pronto?",
+    "Tão perto do topo! Seu teclado está torcendo por você (e por uma limpeza)!",
+    "Posição honrosa! Seu ortopedista também está orgulhoso do seu negócio!",
+    "Você é quase o mais rápido! Seu corretor ortográfico não consegue acompanhar!",
+    "Medalha de prata/bronze em digitação! Também merece ouro em consumo de café!"
+  ],
+  "midRanker": [
+    "Velocidade média, erros de digitação acima da média! Perfeitamente equilibrado!",
+    "Você está no meio do pelotão! Seu teclado agradece o ritmo moderado!",
+    "Você está economizando a vida útil do seu teclado! Estratégia de longo prazo!",
+    "Seus dedos estão no modo econômico! Preservando energia para o sprint final!",
+    "Digitação sustentável! Seu teclado vai durar mais que os dos outros competidores!",
+    "Você prefere pensar duas vezes e digitar uma! Sabedoria acima da velocidade!",
+    "Posição modesta, mas seu código provavelmente tem menos bugs que o do primeiro lugar!"
+  ],
+  "lowerRanker": [
+    "Ei, qualidade é melhor que quantidade! (É o que dizemos para nos sentirmos melhor)",
+    "Digitação lenta, pensamento profundo! Einstein também não era conhecido por digitar rápido!",
+    "Você está economizando a vida útil do seu teclado! Estratégia de longo prazo!",
+    "Seus dedos estão no modo econômico! Preservando energia para o sprint final!",
+    "Digitação sustentável! Seu teclado vai durar mais que os dos outros competidores!",
+    "Você prefere pensar duas vezes e digitar uma! Sabedoria acima da velocidade!",
+    "Posição modesta, mas seu código provavelmente tem menos bugs que o do primeiro lugar!"
+  ],
+  "general": [
+    "Cada tecla pressionada é um passo a mais para a síndrome do túnel do carpo!",
+    "Seu teclado conhece seus segredos melhor que seu terapeuta!",
+    "Seja rápido ou lento, seu ortopedista te aguarda de braços abertos!",
+    "Seu corretor ortográfico está fazendo hora extra hoje!",
+    "Algumas pessoas meditam, você digita. Cada um encontra sua paz interior!",
+    "Quantos bugs você consegue criar por minuto?",
+    "Impressionante! Agora tente digitar sem erros!"
+  ]
+}

@@ -9,7 +9,7 @@ export interface User {
   distance: {
     current: number
     position: number
-    bestPosition?: number
+    bestPosition: number
     change: "subiu" | "desceu" | "manteve"
   }
   keydowns: {
@@ -36,11 +36,6 @@ export interface RankingEntry {
   status: "subiu" | "desceu" | "manteve";
 }
 
-export interface LoginCredentials {
-  username: string
-  password: string
-}
-
 export interface Badge {
   name: string
   distance?: number
@@ -54,4 +49,9 @@ export interface Badge {
   funFact: string
   motivation: string
   nerdTaunt: string
+}
+
+export interface LoginResponse {
+  user: User
+  token: string
 }
