@@ -8,12 +8,14 @@ import { Badge } from "@/components/ui/badge"
 import UserBadges from "@/components/user-badges"
 
 type KeydownPlayer = {
-  id: number
-  name: string
-  keydowns: number
-  wpm: number
-  avatar?: string // Tornando avatar opcional
-  change: "up" | "down" | "same"
+  id?: number
+  name?: string
+  user_github?: string
+  keydowns?: number
+  quant_keys?: number
+  wpm?: number
+  avatar?: string
+  change?: "up" | "down" | "same"
 }
 
 // Frases para os primeiros colocados
@@ -128,46 +130,54 @@ export default function KeydownRankingCard({ player, index }: { player: KeydownP
           </Avatar>
 
           <div className="flex-1">
-            <div className="font-medium">{player.name || "Usuário Anônimo"}</div>
+            <div className="font-medium">{player.name || player.user_github || "Usuário Anônimo"}</div>
             <div className="flex items-center gap-2 mt-1">
               <Keyboard className="h-3.5 w-3.5 text-slate-500" />
               <div className="flex items-baseline">
-                <span className="font-medium text-foreground">{player.keydowns.toLocaleString()}</span>
-                <span className="ml-2 text-xs text-slate-500">
-                  <span className="font-semibold">{player.wpm}</span> WPM
-                </span>
+                <span className="font-medium text-foreground">{(player.keydowns || player.quant_keys || 0).toLocaleString()}</span>
+                {player.wpm && (
+                  <span className="ml-2 text-xs text-slate-500">
+                    <span className="font-semibold">{player.wpm}</span> WPM
+                  </span>
+                )}
               </div>
             </div>
 
             {/* Adicionando apenas o último badge do usuário */}
             <div className="mt-1">
-              <UserBadges userKeydowns={player.keydowns} showOnlyLast={true} type="keydowns" />
+              <UserBadges userKeydowns={player.keydowns || player.quant_keys || 0} showOnlyLast={true} type="keydowns" />
             </div>
           </div>
 
           <div className="ml-auto flex items-center">
-            {player.change === "up" && (
-              <Badge variant="outline" className="bg-green-50 text-green-700 border-green-200">
-                ▲ Subiu
-              </Badge>
-            )}
-            {player.change === "down" && (
-              <Badge variant="outline" className="bg-red-50 text-red-700 border-red-200">
-                ▼ Desceu
-              </Badge>
-            )}
-            {player.change === "same" && (
-              <Badge variant="outline" className="bg-slate-50 text-slate-700 border-slate-200">
-                ● Manteve
-              </Badge>
+            {player.change && (
+              <>
+                {player.change === "up" && (
+                  <Badge variant="outline" className="bg-green-50 text-green-700 border-green-200">
+                    ▲ Subiu
+                  </Badge>
+                )}
+                {player.change === "down" && (
+                  <Badge variant="outline" className="bg-red-50 text-red-700 border-red-200">
+                    ▼ Desceu
+                  </Badge>
+                )}
+                {player.change === "same" && (
+                  <Badge variant="outline" className="bg-slate-50 text-slate-700 border-slate-200">
+                    ● Manteve
+                  </Badge>
+                )}
+              </>
             )}
           </div>
         </div>
 
-        {/* Frase aleatória baseada na posição */}
-        <div className="px-4 pb-3 pt-0">
-          <p className="text-xs italic text-muted-foreground">{randomQuote}</p>
-        </div>
+        {/* Frase exibida apenas para os 3 primeiros colocados */}
+        {index < 3 && (
+          <div className="px-4 pb-3 pt-0">
+            <p className="text-xs text-muted-foreground">{randomQuote}</p>
+          </div>
+        )}
       </CardContent>
     </Card>
   )

@@ -8,12 +8,11 @@ import { Badge } from "@/components/ui/badge"
 import UserBadges from "@/components/user-badges"
 
 type DistancePlayer = {
-  id: number
-  name: string
-  distance: number
-  unit: string
-  avatar?: string // Tornando avatar opcional
-  change: "up" | "down" | "same"
+  id?: number
+  user_github: string
+  name?: string
+  quant_dist: number
+  avatar?: string
 }
 
 // Frases para os primeiros colocados
@@ -99,24 +98,35 @@ export default function DistanceRankingCard({ player, index }: { player: Distanc
     return <div>Dados do jogador não disponíveis</div>
   }
 
-  // Extrair as iniciais do nome para o fallback do avatar
-  const initials = player.name ? player.name.substring(0, 2).toUpperCase() : "??"
+  // Usar o nome do Github como nome de exibição se name não estiver disponível
+  const displayName = player.name || player.user_github || "Usuário Anônimo"
+  
+  // Extrair as iniciais para o fallback do avatar
+  const initials = displayName.substring(0, 2).toUpperCase()
 
   return (
     <Card
-      className={`overflow-hidden transition-all hover:shadow-md ${index < 3 ? "border-2" : ""} ${
-        index === 0 ? "border-yellow-500" : index === 1 ? "border-slate-400" : index === 2 ? "border-amber-700" : ""
+      className={`overflow-hidden transition-all ${
+        index < 3
+          ? `border-2 ${
+              index === 0
+                ? "border-yellow-500 shadow-[0_0_15px_rgba(234,179,8,0.5)]"
+                : index === 1
+                ? "border-slate-400 shadow-[0_0_15px_rgba(148,163,184,0.5)]"
+                : "border-amber-700 shadow-[0_0_15px_rgba(180,83,9,0.5)]"
+            }`
+          : "hover:shadow-md"
       }`}
     >
       <CardContent className="p-0">
         <div className="flex items-center p-4">
           <div className="flex items-center justify-center w-10 mr-4 font-bold text-lg">
             {index === 0 ? (
-              <Trophy className="h-6 w-6 text-yellow-500" />
+              <Trophy className="h-8 w-8 text-yellow-500" />
             ) : index === 1 ? (
-              <Medal className="h-6 w-6 text-slate-400" />
+              <Trophy className="h-7 w-7 text-slate-400" />
             ) : index === 2 ? (
-              <Award className="h-6 w-6 text-amber-700" />
+              <Trophy className="h-6 w-6 text-amber-700" />
             ) : (
               <span className="text-muted-foreground">{index + 1}</span>
             )}
@@ -128,44 +138,24 @@ export default function DistanceRankingCard({ player, index }: { player: Distanc
           </Avatar>
 
           <div className="flex-1">
-            <div className="font-medium">{player.name || "Usuário Anônimo"}</div>
-            <div className="flex items-center gap-2 mt-1">
-              <MapPin className="h-3.5 w-3.5 text-slate-500" />
-              <div className="flex items-baseline">
-                <span className="font-medium text-foreground">{player.distance.toFixed(1)}</span>
-                <span className="ml-1 text-xs uppercase font-semibold text-slate-500">km</span>
-              </div>
-            </div>
-
-            {/* Adicionando apenas o último badge do usuário */}
+            <div className="font-medium">{displayName}</div>
             <div className="mt-1">
-              <UserBadges userDistance={player.distance} showOnlyLast={true} />
+              <UserBadges userDistance={player.quant_dist} showOnlyLast={true} />
             </div>
           </div>
 
-          <div className="ml-auto flex items-center">
-            {player.change === "up" && (
-              <Badge variant="outline" className="bg-green-50 text-green-700 border-green-200">
-                ▲ Subiu
-              </Badge>
-            )}
-            {player.change === "down" && (
-              <Badge variant="outline" className="bg-red-50 text-red-700 border-red-200">
-                ▼ Desceu
-              </Badge>
-            )}
-            {player.change === "same" && (
-              <Badge variant="outline" className="bg-slate-50 text-slate-700 border-slate-200">
-                ● Manteve
-              </Badge>
-            )}
+          <div className="ml-auto flex flex-col items-end">
+            <span className="font-medium text-foreground">{player.quant_dist.toFixed(1)}</span>
+            <span className="text-xs uppercase font-semibold text-slate-500">km</span>
           </div>
         </div>
 
-        {/* Frase aleatória baseada na posição */}
-        <div className="px-4 pb-3 pt-0">
-          <p className="text-xs italic text-muted-foreground">{randomQuote}</p>
-        </div>
+        {/* Frase exibida apenas para os 3 primeiros colocados */}
+        {index < 3 && (
+          <div className="px-4 pb-3 pt-0">
+            <p className="text-xs text-muted-foreground">{randomQuote}</p>
+          </div>
+        )}
       </CardContent>
     </Card>
   )

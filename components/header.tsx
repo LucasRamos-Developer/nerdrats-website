@@ -92,41 +92,51 @@ export default function Header() {
 
   return (
     <header className="border-b bg-white">
-      <div className="container mx-auto flex h-16 items-center justify-between px-4">
-        <Link href="/" className="flex items-center">
-          <Image
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/nerdrats-bZXIsl29NnVDcaRTJtkOsFdFjF7JeE.png"
-            alt="NERDRATS Logo"
-            width={180}
-            height={50}
-            className="h-auto"
-            priority
-          />
-        </Link>
+      <div className="container mx-auto flex px-4">
+        <div className="flex h-16 items-center justify-between w-full">
+          <div className="flex items-center">
+            <Link href="/" className="flex items-center">
+              <Image
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/nerdrats-bZXIsl29NnVDcaRTJtkOsFdFjF7JeE.png"
+                alt="NERDRATS Logo"
+                width={180}
+                height={50}
+                className="h-auto"
+                priority
+              />
+            </Link>
+          </div>
 
-        <div className="flex items-center gap-2">
-          {user ? (
-            <>
-              <Link href="/perfil">
-                <Button variant="ghost" size="sm" className="gap-1">
-                  <User className="h-4 w-4" />
-                  Perfil
-                </Button>
+          <div className="flex items-center gap-4">
+            <nav className="hidden md:flex items-center gap-6">
+              <Link href="/ranking" className="text-sm font-medium text-gray-800 hover:text-gray-600">
+                Ranking
               </Link>
-              <Button onClick={handleLogout} className="bg-black hover:bg-gray-800 text-white rounded" size="sm">
-                <LogOut className="h-4 w-4 mr-1" />
-                Sair
+            </nav>
+            
+            {user ? (
+              <>
+                <Link href="/perfil">
+                  <Button variant="ghost" size="sm" className="gap-1">
+                    <User className="h-4 w-4" />
+                    Perfil
+                  </Button>
+                </Link>
+                <Button onClick={handleLogout} className="bg-black hover:bg-gray-800 text-white rounded" size="sm">
+                  <LogOut className="h-4 w-4 mr-1" />
+                  Sair
+                </Button>
+              </>
+            ) : (
+              <Button
+                onClick={() => setShowLoginModal(true)}
+                className="bg-black hover:bg-gray-800 text-white rounded"
+                size="sm"
+              >
+                Entrar
               </Button>
-            </>
-          ) : (
-            <Button
-              onClick={() => setShowLoginModal(true)}
-              className="bg-black hover:bg-gray-800 text-white rounded"
-              size="sm"
-            >
-              Entrar
-            </Button>
-          )}
+            )}
+          </div>
         </div>
       </div>
 

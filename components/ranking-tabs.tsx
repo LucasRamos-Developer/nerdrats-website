@@ -23,6 +23,12 @@ export default function RankingTabs() {
       .slice(0, 2)
   }
 
+  const getAvatarUrl = (avatar: string | undefined, initials: string | undefined, username: string | undefined) => {
+    if (avatar) return avatar;
+    const text = initials || getInitials(username);
+    return `/placeholder.svg`;
+  }
+
   useEffect(() => {
     const loadData = async () => {
       setLoading(true)
@@ -64,14 +70,12 @@ export default function RankingTabs() {
           <div className="space-y-4">
             {distanceData.map((player, index) => (
               <DistanceRankingCard
-                key={player.id}
+                key={player.id || player.user_github}
                 player={{
-                  id: Number(player.id),
-                  name: player.user_github,
-                  distance: player.distance || 0,
-                  unit: "km",
-                  avatar: player.avatar || `/placeholder.svg?height=40&width=40&text=${player.initials || getInitials(player.username)}`,
-                  change: player.status === "subiu" ? "up" : player.status === "desceu" ? "down" : "same",
+                  user_github: player.user_github,
+                  name: player.username,
+                  quant_dist: player.quant_dist,
+                  avatar: getAvatarUrl(player.avatar, player.initials, player.username),
                 }}
                 index={index}
               />
@@ -87,14 +91,14 @@ export default function RankingTabs() {
           <div className="space-y-4">
             {keydownData.map((player, index) => (
               <KeydownRankingCard
-                key={player.id}
+                key={player.id || player.user_github}
                 player={{
-                  id: Number(player.id),
-                  name: player.username,
-                  keydowns: player.words || 0,
-                  wpm: Math.floor((player.words || 0) / 5),
-                  avatar: player.avatar || `/placeholder.svg?height=40&width=40&text=${player.initials || getInitials(player.username)}`,
-                  change: player.status === "subiu" ? "up" : player.status === "desceu" ? "down" : "same",
+                  id: Number(player.id) || undefined,
+                  user_github: player.user_github,
+                  name: player.username || player.user_github,
+                  quant_keys: player.quant_keys || 0,
+                  wpm: player.quant_keys ? Math.floor((player.quant_keys) / 5) : undefined,
+                  avatar: getAvatarUrl(player.avatar, player.initials, player.username)
                 }}
                 index={index}
               />

@@ -87,7 +87,6 @@ export default function ProfilePage() {
               Voltar
             </Button>
           </Link>
-          <h1 className="text-3xl font-bold">Meu Perfil</h1>
         </div>
       </div>
 
