@@ -121,8 +121,7 @@ export default function UserBadges({
                   .filter(badge => userDistance >= (badge.distance || 0)) // Filtrar apenas os badges conquistados
                   .sort((a, b) => reverseOrder 
                     ? (b.distance || 0) - (a.distance || 0) // Ordenar do maior para o menor se reverseOrder for true
-                    : (a.distance || 0) - (b.distance || 0)) // Ordenar do menor para o maior se reverseOrder for false
-                  .slice(0, 3) // Pegar apenas os 3 primeiros
+                    : (a.distance || 0) - (b.distance || 0)) // Mostrar todos os badges conquistados (sem slice)
                   .map((badge) => {
                     const isLastEarned = lastDistanceBadge && badge.distance === lastDistanceBadge.distance;
 
@@ -135,13 +134,8 @@ export default function UserBadges({
                                 ? "bg-primary/20 border-primary shadow-md"
                                 : "bg-primary/10 border-primary/30"
                             }`}>
-                              <div className="mb-2 w-12 h-12 relative">
-                                <Image
-                                  src={badge.icon || `/icons/badge-${badge.name.toLowerCase().replace(/\s+/g, "-")}.svg`}
-                                  alt={badge.name}
-                                  width={48}
-                                  height={48}
-                                />
+                              <div className="mb-2 text-4xl">
+                                {badge.badge}
                               </div>
                               <div className="text-sm font-medium text-center">{badge.name}</div>
                               <div className="text-xs text-muted-foreground text-center mt-1">{badge.distance} km</div>
@@ -179,7 +173,7 @@ export default function UserBadges({
                 {allKeydownsBadges
                   .filter(badge => userKeydowns >= (badge.keydowns || 0)) // Filtrar apenas os badges conquistados
                   .sort((a, b) => (b.keydowns || 0) - (a.keydowns || 0)) // Ordenar do maior para o menor
-                  .slice(0, 3) // Pegar apenas os 3 últimos
+                  // Mostrar todos os badges conquistados (sem slice)
                   .map((badge) => {
                     const isLastEarned = lastKeydownsBadge && badge.keydowns === lastKeydownsBadge.keydowns;
 
@@ -192,13 +186,8 @@ export default function UserBadges({
                                 ? "bg-primary/20 border-primary shadow-md"
                                 : "bg-primary/10 border-primary/30"
                             }`}>
-                              <div className="mb-2 w-12 h-12 relative">
-                                <Image
-                                  src={badge.icon || `/icons/badge-${badge.name.toLowerCase().replace(/\s+/g, "-")}.svg`}
-                                  alt={badge.name}
-                                  width={48}
-                                  height={48}
-                                />
+                              <div className="mb-2 text-4xl">
+                                {badge.badge}
                               </div>
                               <div className="text-sm font-medium text-center">{badge.name}</div>
                               <div className="text-xs text-muted-foreground text-center mt-1">

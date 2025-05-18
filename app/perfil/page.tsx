@@ -32,6 +32,18 @@ interface UserData {
   }
 }
 
+// Adaptar para o formato vindo da API
+interface ApiUserData {
+  id: string
+  user_github: string
+  email: string
+  quant_clicks: number
+  quant_dist: number
+  quant_keys: number
+  quant_scrow: number | null
+  created_at: string
+}
+
 export default function ProfilePage() {
   const [user, setUser] = useState<UserData | null>(null)
   const [loading, setLoading] = useState(true)
@@ -39,8 +51,8 @@ export default function ProfilePage() {
   const { toast } = useToast()
 
   useEffect(() => {
-    // Verificar se há um usuário no localStorage
-    const storedUser = localStorage.getItem("nerdrats_user")
+    // Verificar se há um usuário no sessionStorage
+    const storedUser = sessionStorage.getItem("nerdrats_user")
 
     if (!storedUser) {
       // Redirecionar para a página inicial se não houver usuário logado
@@ -54,11 +66,48 @@ export default function ProfilePage() {
     }
 
     try {
-      const userData = JSON.parse(storedUser)
+      // Converter os dados da API para o formato esperado pelo componente
+      const apiUserData: ApiUserData = JSON.parse(storedUser)
+
+      // Criar iniciais a partir do nome de usuário
+      const nameParts = apiUserData.user_github.split(/[^a-zA-Z0-9]/)
+      const initials =
+        nameParts.length > 1
+          ? `${nameParts[0][0]}${nameParts[1][0]}`.toUpperCase()
+          : apiUserData.user_github.substring(0, 2).toUpperCase()
+
+      // Calcular data de membro desde
+      const memberSince = new Date(apiUserData.created_at).toLocaleDateString("pt-BR", {
+        year: "numeric",
+        month: "long",
+      })
+
+      // Converter para o formato que o componente espera
+      const userData: UserData = {
+        id: apiUserData.id,
+        email: apiUserData.email,
+        name: apiUserData.user_github,
+        initials: initials,
+        memberSince: memberSince,
+        lastActivity: "Hoje",
+        distance: {
+          current: apiUserData.quant_dist,
+          position: 1, // Placeholder
+          bestPosition: 1, // Placeholder
+          change: "manteve",
+        },
+        keydowns: {
+          total: apiUserData.quant_keys,
+          position: 1, // Placeholder
+          wpm: 100, // Placeholder
+          change: "manteve",
+        },
+      }
+
       setUser(userData)
     } catch (error) {
       console.error("Erro ao carregar dados do usuário:", error)
-      localStorage.removeItem("nerdrats_user")
+      sessionStorage.removeItem("nerdrats_user")
       router.push("/")
     } finally {
       setLoading(false)

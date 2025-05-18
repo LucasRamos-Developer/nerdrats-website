@@ -89,16 +89,17 @@ export default function Header() {
     // Limpar estado
     setUser(null)
 
-    // Redirecionar para a página inicial se estiver na página de perfil
-    if (window.location.pathname.includes("/perfil")) {
-      router.push("/")
-    }
-
     // Mostrar toast
     toast({
       title: "Logout realizado",
       description: "Você saiu da sua conta com sucesso.",
     })
+    
+    // Redirecionar para a página inicial se estiver na página de perfil
+    // Isso deve ser feito após a limpeza do usuário
+    if (window.location.pathname.includes("/perfil")) {
+      router.push("/")
+    }
   }
 
   return (
