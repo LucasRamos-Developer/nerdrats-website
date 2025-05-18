@@ -140,7 +140,7 @@ export default function DistanceRankingCard({ player, index }: { player: Distanc
           <div className="flex-1">
             <div className="font-medium">{displayName}</div>
             <div className="mt-1">
-              <UserBadges userDistance={player.quant_dist} showOnlyLast={true} />
+              <UserBadges userDistance={player.quant_dist} showOnlyLast={true} reverseOrder={true} type="distance" />
             </div>
           </div>
 

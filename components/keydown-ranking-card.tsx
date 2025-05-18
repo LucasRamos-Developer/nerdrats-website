@@ -134,7 +134,7 @@ export default function KeydownRankingCard({ player, index }: { player: KeydownP
 
             {/* Adicionando apenas o último badge do usuário */}
             <div className="mt-1">
-              <UserBadges userKeydowns={player.keydowns || player.quant_keys || 0} showOnlyLast={true} type="keydowns" />
+              <UserBadges userKeydowns={player.quant_keys} type="keydowns" showOnlyLast={true} reverseOrder={true} />
             </div>
           </div>
 

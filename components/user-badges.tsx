@@ -118,12 +118,12 @@ export default function UserBadges({
             <CardContent>
               <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
                 {allDistanceBadges
-                  .filter(badge => userDistance >= (badge.distance || 0)) // Filtrar apenas os badges conquistados
                   .sort((a, b) => reverseOrder 
                     ? (b.distance || 0) - (a.distance || 0) // Ordenar do maior para o menor se reverseOrder for true
-                    : (a.distance || 0) - (b.distance || 0)) // Mostrar todos os badges conquistados (sem slice)
+                    : (a.distance || 0) - (b.distance || 0)) // Mostrar todos os badges (incluindo não conquistados)
                   .map((badge) => {
-                    const isLastEarned = lastDistanceBadge && badge.distance === lastDistanceBadge.distance;
+                    const isEarned = userDistance >= (badge.distance || 0);
+                    const isLastEarned = isEarned && lastDistanceBadge && badge.distance === lastDistanceBadge.distance;
 
                     return (
                       <TooltipProvider key={`distance-${badge.name}-${badge.distance}`}>
@@ -132,9 +132,11 @@ export default function UserBadges({
                             <div className={`flex flex-col items-center p-3 rounded-lg border ${
                               isLastEarned
                                 ? "bg-primary/20 border-primary shadow-md"
-                                : "bg-primary/10 border-primary/30"
+                                : isEarned
+                                  ? "bg-primary/10 border-primary/30"
+                                  : "bg-gray-100 border-gray-200 opacity-50"
                             }`}>
-                              <div className="mb-2 text-4xl">
+                              <div className={`mb-2 text-4xl ${!isEarned ? "grayscale" : ""}`}>
                                 {badge.badge}
                               </div>
                               <div className="text-sm font-medium text-center">{badge.name}</div>
@@ -142,16 +144,27 @@ export default function UserBadges({
                               {isLastEarned && (
                                 <Badge className="mt-2 text-xs bg-primary text-primary-foreground">Último</Badge>
                               )}
+                              {!isEarned && (
+                                <Badge className="mt-2 text-xs bg-gray-200 text-gray-500">Bloqueado</Badge>
+                              )}
                             </div>
                           </TooltipTrigger>
                           <TooltipContent className="max-w-xs">
                             <div className="space-y-1">
                               <p className="font-bold">{badge.name}</p>
                               <p className="text-xs">{badge.description}</p>
-                              <p className="text-xs mt-2 text-primary font-medium">Fato divertido:</p>
-                              <p className="text-xs italic">{badge.funFact}</p>
-                              <p className="text-xs mt-1 text-primary font-medium">Provocação nerd:</p>
-                              <p className="text-xs italic">{badge.nerdTaunt}</p>
+                              {isEarned ? (
+                                <>
+                                  <p className="text-xs mt-2 text-primary font-medium">Fato divertido:</p>
+                                  <p className="text-xs italic">{badge.funFact}</p>
+                                  <p className="text-xs mt-1 text-primary font-medium">Provocação nerd:</p>
+                                  <p className="text-xs italic">{badge.nerdTaunt}</p>
+                                </>
+                              ) : (
+                                <p className="text-xs mt-2 text-gray-500 italic">
+                                  Percorra mais {((badge.distance || 0) - userDistance).toFixed(1)} km para desbloquear este badge!
+                                </p>
+                              )}
                             </div>
                           </TooltipContent>
                         </Tooltip>
@@ -171,11 +184,11 @@ export default function UserBadges({
             <CardContent>
               <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
                 {allKeydownsBadges
-                  .filter(badge => userKeydowns >= (badge.keydowns || 0)) // Filtrar apenas os badges conquistados
                   .sort((a, b) => (b.keydowns || 0) - (a.keydowns || 0)) // Ordenar do maior para o menor
-                  // Mostrar todos os badges conquistados (sem slice)
+                  // Mostrar todos os badges (incluindo não conquistados)
                   .map((badge) => {
-                    const isLastEarned = lastKeydownsBadge && badge.keydowns === lastKeydownsBadge.keydowns;
+                    const isEarned = userKeydowns >= (badge.keydowns || 0);
+                    const isLastEarned = isEarned && lastKeydownsBadge && badge.keydowns === lastKeydownsBadge.keydowns;
 
                     return (
                       <TooltipProvider key={`keydowns-${badge.name}-${badge.keydowns}`}>
@@ -184,9 +197,11 @@ export default function UserBadges({
                             <div className={`flex flex-col items-center p-3 rounded-lg border ${
                               isLastEarned
                                 ? "bg-primary/20 border-primary shadow-md"
-                                : "bg-primary/10 border-primary/30"
+                                : isEarned
+                                  ? "bg-primary/10 border-primary/30"
+                                  : "bg-gray-100 border-gray-200 opacity-50"
                             }`}>
-                              <div className="mb-2 text-4xl">
+                              <div className={`mb-2 text-4xl ${!isEarned ? "grayscale" : ""}`}>
                                 {badge.badge}
                               </div>
                               <div className="text-sm font-medium text-center">{badge.name}</div>
@@ -196,16 +211,27 @@ export default function UserBadges({
                               {isLastEarned && (
                                 <Badge className="mt-2 text-xs bg-primary text-primary-foreground">Último</Badge>
                               )}
+                              {!isEarned && (
+                                <Badge className="mt-2 text-xs bg-gray-200 text-gray-500">Bloqueado</Badge>
+                              )}
                             </div>
                           </TooltipTrigger>
                           <TooltipContent className="max-w-xs">
                             <div className="space-y-1">
                               <p className="font-bold">{badge.name}</p>
                               <p className="text-xs">{badge.description}</p>
-                              <p className="text-xs mt-2 text-primary font-medium">Fato divertido:</p>
-                              <p className="text-xs italic">{badge.funFact}</p>
-                              <p className="text-xs mt-1 text-primary font-medium">Provocação nerd:</p>
-                              <p className="text-xs italic">{badge.nerdTaunt}</p>
+                              {isEarned ? (
+                                <>
+                                  <p className="text-xs mt-2 text-primary font-medium">Fato divertido:</p>
+                                  <p className="text-xs italic">{badge.funFact}</p>
+                                  <p className="text-xs mt-1 text-primary font-medium">Provocação nerd:</p>
+                                  <p className="text-xs italic">{badge.nerdTaunt}</p>
+                                </>
+                              ) : (
+                                <p className="text-xs mt-2 text-gray-500 italic">
+                                  Digite mais {((badge.keydowns || 0) - userKeydowns).toLocaleString()} teclas para desbloquear este badge!
+                                </p>
+                              )}
                             </div>
                           </TooltipContent>
                         </Tooltip>
@@ -276,13 +302,15 @@ export default function UserBadges({
   let badgesToShow: BadgeData[] = []
 
   if (type === "distance") {
+    // Quando reverseOrder é false, queremos os 3 primeiros badges (os últimos conquistados)
+    // pois eles estarão ordenados do menor para o maior (os mais fáceis de conquistar, ou seja, os primeiros conquistados)
     badgesToShow = reverseOrder
       ? [...earnedDistanceBadges].sort((a, b) => (b.distance || 0) - (a.distance || 0)).slice(0, 3)
-      : earnedDistanceBadges.slice(0, 3)
+      : [...earnedDistanceBadges].sort((a, b) => (a.distance || 0) - (b.distance || 0)).slice(0, 3)
   } else if (type === "keydowns") {
     badgesToShow = reverseOrder
       ? [...earnedKeydownsBadges].sort((a, b) => (b.keydowns || 0) - (a.keydowns || 0)).slice(0, 3)
-      : earnedKeydownsBadges.slice(0, 3)
+      : [...earnedKeydownsBadges].sort((a, b) => (a.keydowns || 0) - (b.keydowns || 0)).slice(0, 3)
   } else {
     // Se for "all", combinar os dois tipos e pegar os 3 mais recentes
     const combinedBadges = [...earnedDistanceBadges, ...earnedKeydownsBadges]
@@ -292,14 +320,18 @@ export default function UserBadges({
     badgesToShow = reverseOrder
       ? combinedBadges
           .sort((a, b) => {
-            const aValue = a.distance ? userDistance / a.distance : a.keydowns ? userKeydowns / a.keydowns : 0
-
-            const bValue = b.distance ? userDistance / b.distance : b.keydowns ? userKeydowns / b.keydowns : 0
-
+            const aValue = a.distance ? a.distance : a.keydowns ? a.keydowns : 0
+            const bValue = b.distance ? b.distance : b.keydowns ? b.keydowns : 0
             return bValue - aValue
           })
           .slice(0, 3)
-      : combinedBadges.slice(0, 3)
+      : combinedBadges
+          .sort((a, b) => {
+            const aValue = a.distance ? a.distance : a.keydowns ? a.keydowns : 0
+            const bValue = b.distance ? b.distance : b.keydowns ? b.keydowns : 0
+            return aValue - bValue
+          })
+          .slice(0, 3)
   }
 
   return (
