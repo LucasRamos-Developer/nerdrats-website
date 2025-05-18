@@ -13,7 +13,8 @@ export default function RankingTabs() {
   const [keydownData, setKeydownData] = useState<RankingEntry[]>([])
   const [loading, setLoading] = useState(true)
 
-  const getInitials = (name: string) => {
+  const getInitials = (name: string | undefined) => {
+    if (!name) return "US"; // US para "User"
     return name
       .split(' ')
       .map(part => part[0])
@@ -69,7 +70,7 @@ export default function RankingTabs() {
                   name: player.user_github,
                   distance: player.distance || 0,
                   unit: "km",
-                  avatar: player.avatar || `/placeholder.svg?height=40&width=40&text=${player.initials || getInitials(player.user_github)}`,
+                  avatar: player.avatar || `/placeholder.svg?height=40&width=40&text=${player.initials || getInitials(player.username)}`,
                   change: player.status === "subiu" ? "up" : player.status === "desceu" ? "down" : "same",
                 }}
                 index={index}

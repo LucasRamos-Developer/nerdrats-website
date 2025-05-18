@@ -21,13 +21,19 @@ export interface User {
 }
 
 export interface RankingEntry {
-  id: string
-  username: string
-  initials: string
-  avatar?: string
-  distance?: number
-  words?: number
-  status: "subiu" | "desceu" | "manteve"
+  id: string;
+  username: string;
+  user_github: string;
+  email: string;
+  initials: string;
+  avatar?: string;
+  distance?: number;
+  words?: number;
+  quant_clicks: number;
+  quant_dist: number;
+  quant_scrow: number;
+  quant_keys: number;
+  status: "subiu" | "desceu" | "manteve";
 }
 
 export interface LoginCredentials {
