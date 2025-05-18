@@ -1,11 +1,12 @@
 "use client"
 
 import type React from "react"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter } from "@/components/ui/dialog"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+
 
 interface LoginModalProps {
   isOpen: boolean
@@ -13,9 +14,12 @@ interface LoginModalProps {
   onLogin: (email: string) => void
 }
 
+
+
 export default function LoginModal({ isOpen, onClose, onLogin }: LoginModalProps) {
   const [email, setEmail] = useState("")
   const [isLoading, setIsLoading] = useState(false)
+  const [isEmailValid, setIsEmailValid] = useState(true)
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -23,12 +27,36 @@ export default function LoginModal({ isOpen, onClose, onLogin }: LoginModalProps
 
     setIsLoading(true)
 
-    // Simular um pequeno atraso para dar feedback visual
-    setTimeout(() => {
-      onLogin(email)
+    try {
+      const response = await fetch(`https://nerds-rats-hackathon.onrender.com/user-by-email/${email}`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      })
+
+      if (!response.ok) {
+        console.error('Erro na resposta:', response.status, response.statusText)
+        setIsEmailValid(false)
+        setIsLoading(false)
+        return
+      }
+
+      const data = await response.json()
+      console.log('Dados recebidos:', data)
+      
+      if (data && Array.isArray(data) && data.length > 0 && data[0].id !== undefined) {
+        onLogin(email)
+        setEmail("")
+      } else {
+        setIsEmailValid(false)
+      }
+    } catch (error) {
+      console.error('Erro ao verificar email:', error)
+      setIsEmailValid(false)
+    } finally {
       setIsLoading(false)
-      setEmail("")
-    }, 800)
+    }
   }
 
   return (
@@ -49,7 +77,11 @@ export default function LoginModal({ isOpen, onClose, onLogin }: LoginModalProps
               placeholder="Digite seu email"
               required
               autoComplete="email"
+              className={!isEmailValid && email ? "border-red-500" : ""}
             />
+            {!isEmailValid && email && (
+              <p className="text-sm text-red-500">Email inválido ou não encontrado</p>
+            )}
           </div>
 
           <DialogFooter className="pt-4">
