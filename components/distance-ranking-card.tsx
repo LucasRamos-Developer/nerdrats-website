@@ -110,10 +110,10 @@ export default function DistanceRankingCard({ player, index }: { player: Distanc
         index < 3
           ? `border-2 ${
               index === 0
-                ? "border-yellow-500 shadow-[0_0_15px_rgba(234,179,8,0.5)]"
+                ? "border-yellow-500"
                 : index === 1
-                ? "border-slate-400 shadow-[0_0_15px_rgba(148,163,184,0.5)]"
-                : "border-amber-700 shadow-[0_0_15px_rgba(180,83,9,0.5)]"
+                ? "border-slate-400"
+                : "border-amber-700"
             }`
           : "hover:shadow-md"
       }`}

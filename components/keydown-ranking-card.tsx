@@ -106,7 +106,7 @@ export default function KeydownRankingCard({ player, index }: { player: KeydownP
 
   return (
     <Card
-      className={`overflow-hidden transition-all hover:shadow-md ${index < 3 ? "border-2" : ""} ${
+      className={`overflow-hidden transition-all ${index < 3 ? "border-2" : ""} ${
         index === 0 ? "border-yellow-500" : index === 1 ? "border-slate-400" : index === 2 ? "border-amber-700" : ""
       }`}
     >
@@ -116,9 +116,9 @@ export default function KeydownRankingCard({ player, index }: { player: KeydownP
             {index === 0 ? (
               <Trophy className="h-6 w-6 text-yellow-500" />
             ) : index === 1 ? (
-              <Medal className="h-6 w-6 text-slate-400" />
+              <Trophy className="h-5.5 w-5.5 text-slate-400" />
             ) : index === 2 ? (
-              <Award className="h-6 w-6 text-amber-700" />
+              <Trophy className="h-5 w-5 text-amber-700" />
             ) : (
               <span className="text-muted-foreground">{index + 1}</span>
             )}
@@ -131,17 +131,6 @@ export default function KeydownRankingCard({ player, index }: { player: KeydownP
 
           <div className="flex-1">
             <div className="font-medium">{player.name || player.user_github || "Usuário Anônimo"}</div>
-            <div className="flex items-center gap-2 mt-1">
-              <Keyboard className="h-3.5 w-3.5 text-slate-500" />
-              <div className="flex items-baseline">
-                <span className="font-medium text-foreground">{(player.keydowns || player.quant_keys || 0).toLocaleString()}</span>
-                {player.wpm && (
-                  <span className="ml-2 text-xs text-slate-500">
-                    <span className="font-semibold">{player.wpm}</span> WPM
-                  </span>
-                )}
-              </div>
-            </div>
 
             {/* Adicionando apenas o último badge do usuário */}
             <div className="mt-1">
@@ -149,25 +138,15 @@ export default function KeydownRankingCard({ player, index }: { player: KeydownP
             </div>
           </div>
 
-          <div className="ml-auto flex items-center">
-            {player.change && (
-              <>
-                {player.change === "up" && (
-                  <Badge variant="outline" className="bg-green-50 text-green-700 border-green-200">
-                    ▲ Subiu
-                  </Badge>
-                )}
-                {player.change === "down" && (
-                  <Badge variant="outline" className="bg-red-50 text-red-700 border-red-200">
-                    ▼ Desceu
-                  </Badge>
-                )}
-                {player.change === "same" && (
-                  <Badge variant="outline" className="bg-slate-50 text-slate-700 border-slate-200">
-                    ● Manteve
-                  </Badge>
-                )}
-              </>
+          {/* Movendo as informações de keydowns e WPM para a direita */}
+          <div className="ml-auto flex flex-col items-end">
+            <div className="flex items-center gap-1">
+              <span className="font-medium text-foreground">{(player.keydowns || player.quant_keys || 0).toLocaleString()}</span>
+            </div>
+            {player.wpm && (
+              <span className="text-xs font-semibold text-slate-500">
+                {player.wpm} WPM
+              </span>
             )}
           </div>
         </div>
