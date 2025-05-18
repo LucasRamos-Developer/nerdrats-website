@@ -1,9 +1,9 @@
 export const API_CONFIG = {
-  baseUrl: process.env.NEXT_PUBLIC_API_URL || 'http://api.exemplo.com',
+  baseUrl: process.env.NEXT_PUBLIC_API_URL || 'https://nerds-rats-hackathon.onrender.com/',
   endpoints: {
     rankings: {
-      distance: '/rankings/distance',
-      keydowns: '/rankings/keydowns'
+      distance: '/rank-dist',
+      keydowns: '/rank-keys'
     },
     auth: {
       login: '/auth/login',
