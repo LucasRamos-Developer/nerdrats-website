@@ -1,0 +1,52 @@
+{
+    "badges": [
+        {
+            "name": "Campo de Futebol",
+            "distance": 0.5,
+            "badge": "⚽️",
+            "icon": "/icons/badge-soccer.svg",
+            "description": "Aproximadamente o comprimento de 5 campos de futebol.",
+            "kcal": 30,
+            "item": "Biscoito",
+            "funFact": "Você percorreu virtualmente o equivalente a 500 bananas enfileiradas! 🍌",
+            "motivation": "O primeiro passo é sempre o mais importante. Continue assim!",
+            "nerdTaunt": "Com essa distância, você poderia ter dado uma volta no campo de futebol, mas preferiu debugar aquela função recursiva pela quinta vez hoje! ⚽"
+        },
+        {
+            "name": "Empire State Building",
+            "distance": 1.0,
+            "badge": "🏙️",
+            "icon": "/icons/badge-skyscraper.svg",
+            "description": "Distância equivalente a 2.5 vezes a altura do Empire State Building.",
+            "kcal": 60,
+            "item": "Copo de Suco",
+            "funFact": "Seu mouse percorreu o equivalente a 1.000 teclados mecânicos enfileirados! ⌨️",
+            "motivation": "Você está subindo como um arranha-céu de código bem estruturado!",
+            "nerdTaunt": "Enquanto você movia o cursor essa distância, seu código poderia ter compilado... se não tivesse 42 erros de sintaxe! 🏙️"
+        },
+        {
+            "name": "Estádio de Futebol",
+            "distance": 2.0,
+            "badge": "🏟️",
+            "icon": "/icons/badge-stadium.svg",
+            "description": "Distância equivalente a 10 campos de futebol.",
+            "kcal": 120,
+            "item": "Pizza",
+            "funFact": "Você acabou de percorrer a distância necessária para queimar uma fatia de pizza! 🍕",
+            "motivation": "Cada passo te leva mais longe do ponto de partida. Continue avançando!",
+            "nerdTaunt": "Com essa distância, você poderia ter dado uma volta completa no estádio, mas preferiu assistir a mais um vídeo de gatinhos programadores! 🐱‍👓"
+        },
+        {
+            "name": "Maratona Completa",
+            "distance": 42.195,
+            "badge": "🏅",
+            "icon": "/icons/badge-marathon.svg",
+            "description": "Distância oficial de uma maratona.",
+            "kcal": 2500,
+            "item": "Medalha de Chocolate",
+            "funFact": "Você virtualmente correu o equivalente a 10.000 marshmallows alinhados! 🍬",
+            "motivation": "Incrível! Você acaba de completar uma maratona. Lembre-se, é sobre a jornada, não apenas a linha de chegada.",
+            "nerdTaunt": "Parabéns! Com essa distância, seu código teve tempo suficiente para compilar e ainda sobrou para um café! ☕"
+        }
+    ]
+}

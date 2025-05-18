@@ -1,0 +1,92 @@
+[
+    {
+        "id": "1",
+        "email": "carlos@nerdrats.com",
+        "name": "Carlos Silva",
+        "initials": "CS",
+        "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=CS&backgroundColor=4f46e5",
+        "memberSince": "Maio 2023",
+        "lastActivity": "Hoje",
+        "distance": {
+            "current": 42.5,
+            "position": 1
+        },
+        "keydowns": {
+            "total": 15420,
+            "position": 2,
+            "wpm": 120
+        }
+    },
+    {
+        "id": "2",
+        "email": "ana@nerdrats.com",
+        "name": "Ana Oliveira",
+        "initials": "AO",
+        "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=AO&backgroundColor=4f46e5",
+        "memberSince": "Janeiro 2023",
+        "lastActivity": "Ontem",
+        "distance": {
+            "current": 38.7,
+            "position": 2
+        },
+        "keydowns": {
+            "total": 18350,
+            "position": 1,
+            "wpm": 135
+        }
+    },
+    {
+        "id": "3",
+        "email": "pedro@nerdrats.com",
+        "name": "Pedro Santos",
+        "initials": "PS",
+        "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=PS&backgroundColor=4f46e5",
+        "memberSince": "Março 2023",
+        "lastActivity": "Há 2 dias",
+        "distance": {
+            "current": 35.2,
+            "position": 3
+        },
+        "keydowns": {
+            "total": 12800,
+            "position": 3,
+            "wpm": 105
+        }
+    },
+    {
+        "id": "4",
+        "email": "mariana@nerdrats.com",
+        "name": "Mariana Costa",
+        "initials": "MC",
+        "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=MC&backgroundColor=4f46e5",
+        "memberSince": "Abril 2023",
+        "lastActivity": "Hoje",
+        "distance": {
+            "current": 33.8,
+            "position": 4
+        },
+        "keydowns": {
+            "total": 10350,
+            "position": 5,
+            "wpm": 95
+        }
+    },
+    {
+        "id": "5",
+        "email": "joao@nerdrats.com",
+        "name": "João Pereira",
+        "initials": "JP",
+        "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=JP&backgroundColor=4f46e5",
+        "memberSince": "Fevereiro 2023",
+        "lastActivity": "Hoje",
+        "distance": {
+            "current": 31.5,
+            "position": 5
+        },
+        "keydowns": {
+            "total": 11200,
+            "position": 4,
+            "wpm": 98
+        }
+    }
+]

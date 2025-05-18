@@ -1,0 +1,169 @@
+{
+    "badges": [
+        {
+            "name": "Iniciante Digital",
+            "keydowns": 1000,
+            "badge": "🔤",
+            "icon": "/icons/badge-keyboard-novice.svg",
+            "description": "Suas primeiras 1.000 teclas digitadas. Todo programador começa em algum lugar!",
+            "wpm": 20,
+            "funFact": "Você digitou o equivalente a 4 páginas de um livro ou 2 emails corporativos muito longos!",
+            "motivation": "O primeiro passo para se tornar um mestre do teclado!",
+            "nerdTaunt": "1.000 teclas e ainda nenhum 'Hello World' funcionando. Estamos progredindo!"
+        },
+        {
+            "name": "Aprendiz de Teclado",
+            "keydowns": 5000,
+            "badge": "⌨️",
+            "icon": "/icons/badge-keyboard-apprentice.svg",
+            "description": "5.000 teclas digitadas. Seus dedos estão começando a memorizar o caminho!",
+            "wpm": 30,
+            "funFact": "Você digitou o equivalente a um artigo científico completo ou 20 tweets antes do limite ser 280 caracteres!",
+            "motivation": "Seus dedos estão ficando mais ágeis a cada tecla!",
+            "nerdTaunt": "5.000 teclas e apenas 4.500 foram para corrigir erros de digitação. Progresso!"
+        },
+        {
+            "name": "Datilógrafo Digital",
+            "keydowns": 10000,
+            "badge": "📝",
+            "icon": "/icons/badge-keyboard-typist.svg",
+            "description": "10.000 teclas digitadas. Você já poderia trabalhar como datilógrafo nos anos 80!",
+            "wpm": 40,
+            "funFact": "Você digitou o equivalente a um capítulo de livro ou 50 mensagens de 'vou me atrasar para a reunião'!",
+            "motivation": "Metade do caminho para se tornar um digitador proficiente!",
+            "nerdTaunt": "10.000 teclas e seu código ainda tem bugs. Talvez o problema não seja a velocidade de digitação..."
+        },
+        {
+            "name": "Tecladista Competente",
+            "keydowns": 25000,
+            "badge": "🖮",
+            "icon": "/icons/badge-keyboard-competent.svg",
+            "description": "25.000 teclas digitadas. Suas teclas já estão começando a desgastar!",
+            "wpm": 50,
+            "funFact": "Você digitou o equivalente a um pequeno romance ou 100 desculpas por não ter comentado o código!",
+            "motivation": "Seus dedos estão dançando pelo teclado como um pianista!",
+            "nerdTaunt": "25.000 teclas e ainda procurando a tecla 'Any Key'. Continue tentando!"
+        },
+        {
+            "name": "Mestre do QWERTY",
+            "keydowns": 50000,
+            "badge": "🎹",
+            "icon": "/icons/badge-keyboard-master.svg",
+            "description": "50.000 teclas digitadas. Seu teclado já está considerando pedir uma ordem de restrição!",
+            "wpm": 60,
+            "funFact": "Você digitou o equivalente a um romance médio ou toda a documentação que você prometeu escrever há 6 meses!",
+            "motivation": "Metade do caminho para 100.000! Seus dedos são incríveis!",
+            "nerdTaunt": "50.000 teclas e ainda usando 'var' em vez de 'let' e 'const'. Quantidade não é qualidade!"
+        },
+        {
+            "name": "Digitador Veloz",
+            "keydowns": 100000,
+            "badge": "⚡",
+            "icon": "/icons/badge-keyboard-swift.svg",
+            "description": "100.000 teclas digitadas. Seus dedos são oficialmente mais rápidos que seu pensamento!",
+            "wpm": 70,
+            "funFact": "Você digitou o equivalente a 'Guerra e Paz' de Tolstói ou um dia inteiro de mensagens no Slack!",
+            "motivation": "Seis dígitos de digitação! Você é uma máquina de escrever humana!",
+            "nerdTaunt": "100.000 teclas e ainda digitando 'googel.com' na barra de endereços. A velocidade tem seu preço!"
+        },
+        {
+            "name": "Teclado em Chamas",
+            "keydowns": 250000,
+            "badge": "🔥",
+            "icon": "/icons/badge-keyboard-fire.svg",
+            "description": "250.000 teclas digitadas. Seu teclado está literalmente pegando fogo!",
+            "wpm": 80,
+            "funFact": "Você digitou o equivalente à trilogia 'O Senhor dos Anéis' completa ou um mês de emails desculpando-se por prazos perdidos!",
+            "motivation": "Seus dedos são como relâmpagos no teclado!",
+            "nerdTaunt": "250.000 teclas e ainda usando o mouse para copiar e colar. Conhece os atalhos Ctrl+C e Ctrl+V?"
+        },
+        {
+            "name": "Digitador Supersônico",
+            "keydowns": 500000,
+            "badge": "🚀",
+            "icon": "/icons/badge-keyboard-sonic.svg",
+            "description": "500.000 teclas digitadas. A barreira do som do teclado foi quebrada!",
+            "wpm": 90,
+            "funFact": "Você digitou o equivalente a toda a série Harry Potter ou um ano de mensagens 'Desculpe o atraso na resposta'!",
+            "motivation": "Meio milhão de teclas! Seus dedos merecem um troféu!",
+            "nerdTaunt": "500.000 teclas e ainda escrevendo 'console.log' para debugar. Já ouviu falar em breakpoints?"
+        },
+        {
+            "name": "Lendário Datilógrafo",
+            "keydowns": 1000000,
+            "badge": "👑",
+            "icon": "/icons/badge-keyboard-legendary.svg",
+            "description": "1 MILHÃO de teclas digitadas. Você é oficialmente uma lenda do teclado!",
+            "wpm": 100,
+            "funFact": "Você digitou o equivalente a toda a Enciclopédia Britânica ou todos os commits que você já fez (incluindo os revertidos)!",
+            "motivation": "Um milhão de teclas! Você transcendeu a condição humana de digitação!",
+            "nerdTaunt": "1 milhão de teclas e ainda escrevendo senhas em post-its. Prioridades, não é mesmo?"
+        },
+        {
+            "name": "Imortal do Teclado",
+            "keydowns": 2500000,
+            "badge": "🏆",
+            "icon": "/icons/badge-keyboard-immortal.svg",
+            "description": "2,5 MILHÕES de teclas digitadas. Seus dedos provavelmente têm músculos próprios agora!",
+            "wpm": 120,
+            "funFact": "Você digitou o equivalente a todos os livros de Game of Thrones, incluindo os que George R.R. Martin ainda não terminou!",
+            "motivation": "Seus dedos são lendários! Eles merecem um lugar no hall da fama da digitação!",
+            "nerdTaunt": "2,5 milhões de teclas e ainda perguntando no Stack Overflow antes de ler a documentação. Clássico!"
+        },
+        {
+            "name": "Divindade Digital",
+            "keydowns": 5000000,
+            "badge": "🌟",
+            "icon": "/icons/badge-keyboard-divine.svg",
+            "description": "5 MILHÕES de teclas digitadas. Você transcendeu a existência mortal de digitação!",
+            "wpm": 140,
+            "funFact": "Você digitou o equivalente a todo o conteúdo da Wikipedia em português ou todos os emails que você nunca respondeu!",
+            "motivation": "Cinco milhões! Seus dedos são praticamente sobrenaturais!",
+            "nerdTaunt": "5 milhões de teclas e ainda usando 'admin' como senha. Quantidade não é segurança!"
+        },
+        {
+            "name": "Entidade do Teclado",
+            "keydowns": 10000000,
+            "badge": "🔮",
+            "icon": "/icons/badge-keyboard-entity.svg",
+            "description": "10 MILHÕES de teclas digitadas. Você existe em um plano superior de digitação!",
+            "wpm": 160,
+            "funFact": "Você digitou o equivalente a toda a biblioteca do Congresso ou todos os termos de serviço que você aceitou sem ler!",
+            "motivation": "Dez milhões! Seus dedos provavelmente brilham no escuro de tanto digitar!",
+            "nerdTaunt": "10 milhões de teclas e ainda usando 'index.html', 'index1.html', 'index_final.html', 'index_final_v2.html'..."
+        },
+        {
+            "name": "Deus do Teclado",
+            "keydowns": 25000000,
+            "badge": "💫",
+            "icon": "/icons/badge-keyboard-god.svg",
+            "description": "25 MILHÕES de teclas digitadas. Você é literalmente uma divindade da digitação!",
+            "wpm": 180,
+            "funFact": "Você digitou o equivalente a todo o código fonte do Linux ou todas as mensagens 'Vamos marcar um café qualquer dia' que nunca se concretizaram!",
+            "motivation": "Vinte e cinco milhões! Seus dedos provavelmente têm consciência própria agora!",
+            "nerdTaunt": "25 milhões de teclas e ainda usando o Internet Explorer. Algumas coisas nunca mudam!"
+        },
+        {
+            "name": "Ser Cósmico do Teclado",
+            "keydowns": 50000000,
+            "badge": "🌌",
+            "icon": "/icons/badge-keyboard-cosmic.svg",
+            "description": "50 MILHÕES de teclas digitadas. Você existe além da compreensão humana de digitação!",
+            "wpm": 200,
+            "funFact": "Você digitou o equivalente a todo o conteúdo da internet em 1999 ou todos os 'Olá, mundo!' já escritos na história da programação!",
+            "motivation": "Cinquenta milhões! Seus dedos provavelmente podem dobrar o espaço-tempo!",
+            "nerdTaunt": "50 milhões de teclas e ainda perguntando 'Isso funciona no IE6?'. Algumas lendas nunca morrem!"
+        },
+        {
+            "name": "Criador Universal do Teclado",
+            "keydowns": 100000000,
+            "badge": "🌠",
+            "icon": "/icons/badge-keyboard-universal.svg",
+            "description": "100 MILHÕES de teclas digitadas. Você criou um novo universo através da digitação!",
+            "wpm": 250,
+            "funFact": "Você digitou o equivalente a todo o código já escrito na história da humanidade ou todas as desculpas já inventadas para bugs em produção!",
+            "motivation": "Cem milhões! Seus dedos são literalmente a fonte de toda a criação digital!",
+            "nerdTaunt": "100 milhões de teclas e ainda usando 'password123'. Algumas coisas são eternas, como sua falta de segurança!"
+        }
+    ]
+}

@@ -1,0 +1,47 @@
+{
+  "topRanker": [
+    "Enquanto os outros programadores dormiam, você estava digitando. Vitória merecida! 🏆",
+    "Você é o Usain Bolt da programação! Rápido nos dedos, lento em levantar da cadeira. 🥇",
+    "Parabéns! Você ganhou o prêmio de 'Mais Quilômetros Virtuais Sem Sair do Lugar'! 🎖️",
+    "Sua cadeira merece um troféu por aguentar tanto tempo com você sentado nela! 👑",
+    "Primeiro lugar no ranking, último lugar em exposição solar! Equilíbrio é tudo! 🌞",
+    "Você é o campeão mundial de maratona sentada! Seus dedos merecem uma massagem! 💪",
+    "Tão produtivo que seu teclado pediu férias! Merecido primeiro lugar! ⌨️"
+  ],
+  "runnerUp": [
+    "Quase lá! Mais alguns bugs para corrigir e você chega ao topo! 🥈",
+    "Prata virtual! Seu sedentarismo está quase no nível profissional! 🏅",
+    "Segundo/terceiro lugar no ranking, primeiro lugar em consumo de café! ☕",
+    "Você está no pódio virtual! Sua coluna vertebral não está tão impressionada... 🦴",
+    "Medalha de prata/bronze por ignorar consistentemente o alarme para se exercitar! 🏃‍♂️",
+    "Tão perto do topo! Talvez se você ignorar mais algumas refeições... 🍕",
+    "Posição honrosa! Seu médico ainda não está orgulhoso, mas nós estamos! 👨‍⚕️"
+  ],
+  "midRanker": [
+    "Você está no meio do pelotão! Nem o mais sedentário, nem o mais ativo. Perfeitamente equilibrado! 🧘‍♂️",
+    "Posição média, habilidades de programação acima da média! Prioridades! 💻",
+    "Você está subindo no ranking! Sua cadeira está afundando na mesma proporção! 🪑",
+    "Nem tão rápido, nem tão devagar. Como um bom algoritmo de ordenação! 🔄",
+    "Você está no caminho certo! O caminho para a fisioterapia também, mas isso é outro assunto... 🩺",
+    "Posição decente! Sua produtividade e sua postura estão inversamente proporcionais! 📊",
+    "Você está no meio termo! Como seu café: nem muito quente, nem muito frio! ☕"
+  ],
+  "lowerRanker": [
+    "Ei, pelo menos você está no ranking! Isso é mais do que seu plano de exercícios pode dizer! 🏋️‍♂️",
+    "Posição humilde, mas seu potencial de sedentarismo é promissor! 📈",
+    "Você está começando sua jornada virtual! Sua jornada real para a geladeira já é expert! 🍔",
+    "Ainda há muito espaço para crescer! Tanto no ranking quanto na sua cadeira! 🪑",
+    "Não desanime! Com mais algumas noites viradas codando, você sobe no ranking! 🌙",
+    "Você está construindo sua reputação virtual! Sua reputação com o personal trainer está em ruínas! 🏃‍♂️",
+    "Posição modesta, mas seu histórico de navegação no Stack Overflow é impressionante! 🔍"
+  ],
+  "general": [
+    "Cada linha de código é um passo que você não deu no mundo real! 🚶‍♂️",
+    "Sua posição no ranking é diretamente proporcional ao tempo que você não passa ao ar livre! 🌳",
+    "Parabéns! Seu médico acabou de comprar um iate com o dinheiro das suas futuras consultas! 👨‍⚕️",
+    "Sua cadeira conhece melhor o formato do seu corpo do que seu parceiro(a)! 💺",
+    "Você está no ranking! Seu contador de passos no celular está com ciúmes! 📱",
+    "Sua posição mostra dedicação! Ao código, não à sua saúde! 💉",
+    "Impressionante! Seu avatar virtual percorre mais distância que você na vida real! 🎮"
+  ]
+}
