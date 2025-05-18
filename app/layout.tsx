@@ -3,6 +3,8 @@ import { Inter } from "next/font/google"
 import { ThemeProvider } from "@/components/theme-provider"
 import Header from "@/components/header"
 import { Toaster } from "@/components/ui/toaster"
+import { AchievementProvider } from "@/contexts/achievement-context"
+import AchievementPopupWrapper from "@/components/achievement-popup-wrapper"
 import "./globals.css"
 
 const inter = Inter({ subsets: ["latin"] })
@@ -22,9 +24,12 @@ export default function RootLayout({
     <html lang="pt-BR" suppressHydrationWarning>
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
-          <Header />
-          <main>{children}</main>
-          <Toaster />
+          <AchievementProvider>
+            <Header />
+            <main>{children}</main>
+            <AchievementPopupWrapper />
+            <Toaster />
+          </AchievementProvider>
         </ThemeProvider>
       </body>
     </html>
