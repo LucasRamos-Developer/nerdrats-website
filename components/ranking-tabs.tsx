@@ -12,6 +12,7 @@ export default function RankingTabs() {
   const [distanceData, setDistanceData] = useState<RankingEntry[]>([])
   const [keydownData, setKeydownData] = useState<RankingEntry[]>([])
   const [loading, setLoading] = useState(true)
+  const [lastUpdate, setLastUpdate] = useState<Date>(new Date())
 
   const getInitials = (name: string | undefined) => {
     if (!name) return "US"; // US para "User"
@@ -29,25 +30,36 @@ export default function RankingTabs() {
     return `/placeholder.svg`;
   }
 
-  useEffect(() => {
-    const loadData = async () => {
-      setLoading(true)
-      try {
-        const [distanceResult, keydownResult] = await Promise.all([
-          fetchRankingData("distancia"),
-          fetchRankingData("teclas"),
-        ])
+  const loadData = async () => {
+    setLoading(true)
+    try {
+      const [distanceResult, keydownResult] = await Promise.all([
+        fetchRankingData("distancia"),
+        fetchRankingData("teclas"),
+      ])
 
-        setDistanceData(distanceResult)
-        setKeydownData(keydownResult)
-      } catch (error) {
-        console.error("Falha ao buscar dados do ranking:", error)
-      } finally {
-        setLoading(false)
-      }
+      setDistanceData(distanceResult)
+      setKeydownData(keydownResult)
+      setLastUpdate(new Date())
+    } catch (error) {
+      console.error("Falha ao buscar dados do ranking:", error)
+    } finally {
+      setLoading(false)
     }
+  }
 
+  useEffect(() => {
+    // Carrega os dados inicialmente
     loadData()
+
+    // Configura um intervalo para atualizar a cada 5 minutos (300000ms)
+    const intervalId = setInterval(() => {
+      console.log("Atualizando dados do ranking...")
+      loadData()
+    }, 300000) // 5 minutos em milissegundos
+
+    // Limpa o intervalo quando o componente é desmontado
+    return () => clearInterval(intervalId)
   }, [])
 
   return (
@@ -62,6 +74,10 @@ export default function RankingTabs() {
           <span>Teclas</span>
         </TabsTrigger>
       </TabsList>
+      
+      <div className="text-xs text-gray-500 text-right mb-2">
+        Última atualização: {lastUpdate.toLocaleTimeString()}
+      </div>
 
       <TabsContent value="distancia">
         {loading ? (
