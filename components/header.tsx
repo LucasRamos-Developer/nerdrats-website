@@ -25,27 +25,38 @@ export default function Header() {
   const [user, setUser] = useState<LoggedInUser | null>(null)
   const router = useRouter()
 
-  // Verificar se há um usuário no localStorage ao carregar
+  // Verificar se há um usuário no sessionStorage ao carregar
   useEffect(() => {
-    const storedUser = localStorage.getItem("nerdrats_user")
+    const storedUser = sessionStorage.getItem("nerdrats_user")
     if (storedUser) {
       try {
         setUser(JSON.parse(storedUser))
       } catch (error) {
         console.error("Erro ao carregar usuário:", error)
-        localStorage.removeItem("nerdrats_user")
+        sessionStorage.removeItem("nerdrats_user")
       }
     }
   }, [])
 
-  const handleLogin = (email: string) => {
+  const handleLogin = async (email: string) => {
     try {
-      // Buscar usuário diretamente do arquivo JSON importado
-      const userData = usersData.find((user) => user.email.toLowerCase() === email.toLowerCase())
+      const response = await fetch(`https://nerds-rats-hackathon.onrender.com/user-by-email/${email}`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      })
 
-      if (userData) {
-        // Salvar usuário no localStorage
-        localStorage.setItem("nerdrats_user", JSON.stringify(userData))
+      if (!response.ok) {
+        throw new Error("Usuário não encontrado")
+      }
+
+      const data = await response.json()
+      
+      if (data && Array.isArray(data) && data.length > 0) {
+        const userData = data[0]
+        // Salvar usuário no sessionStorage
+        sessionStorage.setItem("nerdrats_user", JSON.stringify(userData))
 
         // Atualizar estado
         setUser(userData)
@@ -56,7 +67,7 @@ export default function Header() {
         // Mostrar toast de sucesso
         toast({
           title: "Login bem-sucedido",
-          description: `Bem-vindo, ${userData.name}!`,
+          description: `Bem-vindo, ${userData.user_github}!`,
         })
       } else {
         throw new Error("Usuário não encontrado")
@@ -72,8 +83,8 @@ export default function Header() {
   }
 
   const handleLogout = () => {
-    // Remover usuário do localStorage
-    localStorage.removeItem("nerdrats_user")
+    // Remover usuário do sessionStorage
+    sessionStorage.removeItem("nerdrats_user")
 
     // Limpar estado
     setUser(null)
